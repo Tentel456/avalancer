@@ -1,0 +1,311 @@
+@import url("../Dashboard/Dashboard.css");
+
+.market-content {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.market-section {
+  width: 100%;
+}
+
+.market-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.market-header h2 {
+  font-size: 2.25rem;
+  color: var(--c-gray-900);
+  margin: 0;
+  font-weight: 700;
+}
+
+.market-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--c-gray-600);
+  border-radius: 10px;
+  flex: 1;
+  max-width: 400px;
+  transition: all 0.2s;
+}
+
+.market-search:focus-within {
+  border-color: var(--c-green-500);
+  box-shadow: 0 0 0 4px rgba(74, 103, 65, 0.1);
+}
+
+.market-search i {
+  font-size: 1.25rem;
+  color: var(--c-gray-700);
+}
+
+.market-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  color: var(--c-gray-900);
+}
+
+.market-search input::placeholder {
+  color: var(--c-text-tertiary);
+}
+
+.market-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+}
+
+.market-loading i {
+  font-size: 3rem;
+  color: var(--c-green-500);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.market-loading p {
+  font-size: 1.125rem;
+  color: var(--c-text-tertiary);
+  margin: 0;
+}
+
+.market-error,
+.market-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border: 1.5px solid var(--c-gray-600);
+  border-radius: 16px;
+}
+
+.market-error i,
+.market-empty i {
+  font-size: 3rem;
+  color: var(--c-gray-700);
+}
+
+.market-error p,
+.market-empty p {
+  font-size: 1.125rem;
+  color: var(--c-text-tertiary);
+  margin: 0;
+}
+
+.retry-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--c-green-500) 0%, #3d5636 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 103, 65, 0.3);
+}
+
+.retry-button i {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.crypto-list {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border: 1.5px solid var(--c-gray-600);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.crypto-list-header {
+  display: grid;
+  grid-template-columns: 60px 2fr 1.5fr 1.5fr 1.5fr;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 2px solid var(--c-gray-600);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.crypto-item {
+  display: grid;
+  grid-template-columns: 60px 2fr 1.5fr 1.5fr 1.5fr;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+  align-items: center;
+}
+
+.crypto-item:last-child {
+  border-bottom: none;
+}
+
+.crypto-item:hover {
+  background-color: rgba(74, 103, 65, 0.08);
+  transform: translateX(4px);
+}
+
+.crypto-rank {
+  font-weight: 600;
+  color: var(--c-text-tertiary);
+  font-size: 0.95rem;
+}
+
+.crypto-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crypto-name img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.crypto-name div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.crypto-name .name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--c-gray-900);
+}
+
+.crypto-name .symbol {
+  font-size: 0.875rem;
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+}
+
+.crypto-price {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--c-gray-900);
+  font-family: 'Courier New', monospace;
+}
+
+.crypto-change {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.crypto-change.positive {
+  color: #16a34a;
+}
+
+.crypto-change.negative {
+  color: #dc2626;
+}
+
+.crypto-change i {
+  font-size: 1.125rem;
+}
+
+.crypto-market-cap {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--c-gray-700);
+  font-family: 'Courier New', monospace;
+}
+
+@media (max-width: 1200px) {
+  .crypto-list-header,
+  .crypto-item {
+    grid-template-columns: 50px 2fr 1.5fr 1.5fr;
+  }
+
+  .crypto-market-cap {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .market-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .market-search {
+    max-width: none;
+  }
+
+  .crypto-list-header,
+  .crypto-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .crypto-list-header {
+    display: none;
+  }
+
+  .crypto-item {
+    padding: 1rem;
+  }
+
+  .crypto-rank {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .crypto-item {
+    position: relative;
+  }
+
+  .crypto-name {
+    grid-row: 1;
+  }
+
+  .crypto-price,
+  .crypto-change {
+    font-size: 1rem;
+  }
+}
