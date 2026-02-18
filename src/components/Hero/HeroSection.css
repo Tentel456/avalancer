@@ -1,0 +1,97 @@
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: url(#clip-path1);
+  background-color: var(--light);
+  overflow: hidden;
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  opacity: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  opacity: 0;
+  max-width: 100vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title-top {
+  font-family: 'Clash Display', 'Arial Black', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 9rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: white !important;
+}
+
+.hero-title-bottom {
+  font-family: 'Aston Script', 'Brush Script MT', cursive !important;
+  font-weight: 700 !important;
+  font-size: 11rem !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  margin-top: -1rem !important;
+  color: white !important;
+}
+
+#clipContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-title-top {
+    font-size: 3rem !important;
+  }
+  
+  .hero-title-bottom {
+    font-size: 4rem !important;
+    margin-top: -0.5rem !important;
+  }
+}
